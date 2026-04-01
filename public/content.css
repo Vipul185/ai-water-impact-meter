@@ -1,0 +1,407 @@
+#ai-impact-meter-root {
+  all: initial;
+  position: fixed;
+  top: 88px;
+  right: 18px;
+  z-index: 2147483646;
+  width: min(292px, calc(100vw - 24px));
+  font-family: Inter, 'Segoe UI', sans-serif;
+  pointer-events: auto;
+}
+
+#ai-impact-meter-root .aimeter-shell {
+  color: #eef3ff;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(24, 27, 52, 0.96) 0 68px, rgba(12, 14, 22, 0.96) 68px 100%),
+    #0d0f18;
+  border: 1px solid rgba(136, 154, 255, 0.18);
+  box-shadow:
+    0 18px 52px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+#ai-impact-meter-root .aimeter-shell[data-collapsed='true'] {
+  width: 164px;
+}
+
+#ai-impact-meter-root .aimeter-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#ai-impact-meter-root .aimeter-brand {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #7aa8ff;
+}
+
+#ai-impact-meter-root .aimeter-status {
+  margin: 5px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #a5abc7;
+}
+
+#ai-impact-meter-root .aimeter-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(173, 182, 238, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #f3f4fa;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#ai-impact-meter-root .aimeter-toggle:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(173, 182, 238, 0.3);
+}
+
+#ai-impact-meter-root .aimeter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px;
+}
+
+#ai-impact-meter-root .aimeter-shell[data-collapsed='true'] .aimeter-body {
+  display: none;
+}
+
+#ai-impact-meter-root .aimeter-toprow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#ai-impact-meter-root .aimeter-site,
+#ai-impact-meter-root .aimeter-live,
+#ai-impact-meter-root .aimeter-session-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+#ai-impact-meter-root .aimeter-site {
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #eef2ff;
+}
+
+#ai-impact-meter-root .aimeter-live {
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#ai-impact-meter-root .aimeter-live-live {
+  background: rgba(63, 176, 107, 0.14);
+  color: #89f1c1;
+}
+
+#ai-impact-meter-root .aimeter-live-standby {
+  background: rgba(255, 255, 255, 0.04);
+  color: #c0c7e8;
+}
+
+#ai-impact-meter-root .aimeter-label {
+  margin: 0 0 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #6d728f;
+}
+
+#ai-impact-meter-root .aimeter-request-layout {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+#ai-impact-meter-root .aimeter-panel {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 6px;
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(22, 24, 38, 0.96), rgba(15, 17, 28, 0.96)),
+    #11131d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#ai-impact-meter-root .aimeter-divider {
+  width: 1px;
+  align-self: stretch;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.12) 16%, rgba(255, 255, 255, 0.12) 84%, transparent 100%);
+}
+
+#ai-impact-meter-root .aimeter-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+#ai-impact-meter-root .aimeter-value {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: #f8faff;
+}
+
+#ai-impact-meter-root .aimeter-unit {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca5c9;
+}
+
+#ai-impact-meter-root .aimeter-name {
+  font-size: 11px;
+  color: #6f7696;
+}
+
+#ai-impact-meter-root .aimeter-helper {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #bcc2de;
+}
+
+#ai-impact-meter-root .aimeter-helper-dim {
+  color: #8f96b7;
+}
+
+#ai-impact-meter-root .aimeter-beaker {
+  width: 78px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-title {
+  margin: 0;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #e9edf9;
+  text-align: center;
+}
+
+#ai-impact-meter-root .aimeter-beaker-wrap {
+  position: relative;
+  width: 72px;
+  height: 106px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-rim {
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  right: 7px;
+  height: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+}
+
+#ai-impact-meter-root .aimeter-beaker-body {
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  right: 13px;
+  bottom: 4px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.62);
+  border-top: none;
+  border-bottom-left-radius: 16px 12px;
+  border-bottom-right-radius: 16px 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(116, 201, 255, 0.03));
+}
+
+#ai-impact-meter-root .aimeter-beaker-body::before,
+#ai-impact-meter-root .aimeter-beaker-body::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 12px;
+  height: 14px;
+  border-top: 2px solid rgba(255, 255, 255, 0.62);
+}
+
+#ai-impact-meter-root .aimeter-beaker-body::before {
+  left: -2px;
+  border-left: 2px solid rgba(255, 255, 255, 0.62);
+  border-top-left-radius: 10px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-body::after {
+  right: -2px;
+  border-right: 2px solid rgba(255, 255, 255, 0.62);
+  border-top-right-radius: 10px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-water {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px 12px 8px 8px;
+  background: linear-gradient(180deg, rgba(118, 222, 255, 0.92), rgba(75, 143, 255, 0.88));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 0 14px rgba(92, 194, 255, 0.18);
+  transition: height 0.35s ease;
+}
+
+#ai-impact-meter-root .aimeter-beaker-wave {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(240, 252, 255, 0.7);
+}
+
+#ai-impact-meter-root .aimeter-beaker-mark {
+  position: absolute;
+  right: 5px;
+  width: 9px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+}
+
+#ai-impact-meter-root .aimeter-beaker-mark-1 {
+  top: 23px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-mark-2 {
+  top: 37px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-mark-3 {
+  top: 51px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-mark-4 {
+  top: 65px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-readout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+#ai-impact-meter-root .aimeter-beaker-readout strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: #75d3ff;
+}
+
+#ai-impact-meter-root .aimeter-beaker-readout span {
+  font-size: 10px;
+  color: #90a2c8;
+}
+
+#ai-impact-meter-root .aimeter-session-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+#ai-impact-meter-root .aimeter-session-pill {
+  padding: 8px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  color: #e8ecff;
+}
+
+#ai-impact-meter-root .aimeter-history-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+#ai-impact-meter-root .aimeter-history-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 9px 6px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  color: #74c9ff;
+}
+
+#ai-impact-meter-root .aimeter-history-pill strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #74c9ff;
+}
+
+#ai-impact-meter-root .aimeter-history-pill span {
+  font-size: 10px;
+  font-weight: 600;
+  color: #9ba6cb;
+}
+
+#ai-impact-meter-root .aimeter-history-pill small {
+  font-size: 10px;
+  color: #7a81a3;
+}
+
+#ai-impact-meter-root .aimeter-confidence {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  color: #c4cae5;
+}
+
+#ai-impact-meter-root .aimeter-confidence-value {
+  color: #aeb7de;
+}
+
+#ai-impact-meter-root .aimeter-footnote {
+  font-size: 10px;
+  line-height: 1.45;
+  color: #757d9f;
+}
+
+@media (max-width: 900px) {
+  #ai-impact-meter-root {
+    top: auto;
+    right: 12px;
+    bottom: 14px;
+  }
+}

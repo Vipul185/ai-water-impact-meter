@@ -1,0 +1,23 @@
+{
+  "name": "ai-impact-meter-extension",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Chrome extension prototype that estimates electricity and cooling-equivalent water for prompts on major AI sites.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.7.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.1"
+  }
+}
