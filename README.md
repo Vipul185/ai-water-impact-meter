@@ -31,6 +31,23 @@ This extension is an estimate tool, not an exact meter.
 - Water numbers are more uncertain
 - Results are best used to compare prompts, not as scientific measurements
 
+## Quick use for non-developers
+
+If you just want to use the extension, you do not need to run `npm install` or `npm run build`.
+
+1. Download this repository
+2. Open `chrome://extensions`
+3. Turn on `Developer mode`
+4. Click `Load unpacked`
+5. Select the `dist` folder from the downloaded project
+
+The `dist` folder in this repository already contains the ready-to-load extension files.
+
+## Quick answer
+
+- Regular users: no npm needed
+- Developers editing the source code: use npm and rebuild
+
 ## Supported sites
 
 - ChatGPT
@@ -83,9 +100,11 @@ cd your-project-folder
 - `public/manifest.json` Chrome extension manifest
 - `public/privacy-policy.html` hostable privacy policy page
 
-## Getting started
+## Developer setup (optional)
 
 ### Before you start
+
+This section is only for people who want to edit the source code.
 
 Make sure Node.js and npm are installed on your system.
 
@@ -107,7 +126,7 @@ Still in the same project root folder, run:
 npm run build
 ```
 
-This creates a `dist` folder with the unpacked extension files.
+This recreates the `dist` folder with the unpacked extension files.
 
 ### 3. Load it in Chrome
 
@@ -150,9 +169,9 @@ See:
 
 ## Notes for contributors
 
-- `dist/` is generated build output and should not be committed
+- `dist/` is intentionally included so non-developers can load the extension without building it
 - `node_modules/` should not be committed
-- build the project before loading it into Chrome
+- if you change the source code, rebuild the project so `dist/` stays up to date
 
 ## License
 
