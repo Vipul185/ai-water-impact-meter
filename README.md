@@ -3,7 +3,6 @@
 AI Impact Meter is a Chrome extension that shows a rough estimate of how much electricity and cooling-equivalent water an AI prompt may use on major AI chat websites.
 
 ## Start here
-
 **You do not need `npm install` or `npm run build` if you only want to use the extension.**
 
 ### Quick use for non-developers
