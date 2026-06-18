@@ -7,6 +7,7 @@ AI Impact Meter is a Chrome extension that shows a rough estimate of how much el
 
 ### Quick use for non-developers
 
+
 1. **Download this repository**
 2. **Open `chrome://extensions`**
 3. **Turn on `Developer mode`**
